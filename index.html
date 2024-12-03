@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main__app">
+        <div class="gameOver">
+            <h2>Fin del juego</h2>
+            <button class="reset">Reset</button>
+            <p class="puntaje">Tu puntaje es: <span class="final__points"></span></p>
+        </div>
+        <!-- High Score -->
+        <div class="points__container">
+            <div class="score__container">
+                <h2>Puntos: </h2>
+                <p class="score">0</p>
+            </div>
+        </div>
+        <!-- Lifes and Score -->
+        <div class="lifes__container">
+            <img src="./img/heart.png" alt="life" class="lifes" id="life1">
+            <img src="./img/heart.png" alt="life" class="lifes" id="life2">
+            <img src="./img/heart.png" alt="life" class="lifes" id="life3">
+            <img src="./img/heart.png" alt="life" class="lifes" id="life4">
+            <img src="./img/heart.png" alt="life" class="lifes" id="life5">
+        </div>
+        <!-- Answer and countdown -->
+        <div class="answer__countdown">
+            <div class="ask__container">
+                <h2 class="ask"></h2>
+            </div>
+            <div class="time__container">
+                <p class="time"></p>
+            </div>
+            <div class="buttons__container">
+                <button class="clickbtn">Jugar</button>
+                <button class="nextbtn" disabled>Siguiente</button>
+            </div>
+            <div class="message">
+                <p class="correctp"></p>
+                <p class="incorrectp"></p>
+            </div>
+        </div>
+        <!-- Options -->
+        <div class="options__container">
+            <div class="left">
+                <div class="answer" id="answer__a">
+                    <p class="option__a"></p>
+                </div>
+                <div class="answer" id="answer__b">
+                    <p class="option__b"></p>
+                </div>
+            </div>
+            <div class="right">
+                <div class="answer" id="answer__c">
+                    <p class="option__c"></p>
+                </div>
+                <div class="answer" id="answer__d">
+                    <p class="option__d" id="option__d"></p>
+                </div>
+            </div>
+        </div>
+        <!-- References -->
+        <div class="references__container">
+            <p class="reference"></p>
+        </div>
+    </div>
+    <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>
