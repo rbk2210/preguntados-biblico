@@ -4,7 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description"
+        content="Juego de preguntas bíblicas interactivo para aprender y divertirse. Responde preguntas, suma puntos y desafía tus conocimientos.">
+    <meta name="author" content="RBK Coder">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Preguntados Bíblico - Juego Interactivo">
+    <meta property="og:description"
+        content="Responde preguntas bíblicas y demuestra tus conocimientos en este divertido juego.">
+    <meta property="og:url" content="https://rbk2210.github.io/preguntados-biblico/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Preguntados Bíblico - Juego Interactivo">
+    <meta name="twitter:description"
+        content="Responde preguntas bíblicas y demuestra tus conocimientos en este divertido juego.">
+    <meta name="theme-color" content="#ffffff">
+    <title>Preguntados Bíblico</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,12 +26,13 @@
 </head>
 
 <body>
+    <div class="gameOver">
+        <h2>Fin del juego</h2>
+        <button class="reset">Reset</button>
+        <p class="puntaje">Tu puntaje es: <span class="final__points"></span></p>
+    </div>
     <div class="main__app">
-        <div class="gameOver">
-            <h2>Fin del juego</h2>
-            <button class="reset">Reset</button>
-            <p class="puntaje">Tu puntaje es: <span class="final__points"></span></p>
-        </div>
+
         <!-- High Score -->
         <div class="points__container">
             <div class="score__container">

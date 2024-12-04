@@ -31,7 +31,7 @@ Sigue estos pasos para instalar y ejecutar el proyecto:
 1. Clona este repositorio en tu computadora:
 
    ```bash
-   git clone https://github.com/usuario/trivia-biblica.git
+   git clone https://github.com/rbk2210/preguntados-biblico.git
 
 2. Navega al directorio del proyecto:
 

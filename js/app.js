@@ -108,13 +108,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function randomAsk() {
-        randomNum = Math.floor(Math.random() * preguntasBiblicas.length) + 1;
-        ask.textContent = preguntasBiblicas[randomNum].pregunta
-        option__a.textContent = preguntasBiblicas[randomNum].opciones[0];
-        option__b.textContent = preguntasBiblicas[randomNum].opciones[1];
-        option__c.textContent = preguntasBiblicas[randomNum].opciones[2];
-        option__d.textContent = preguntasBiblicas[randomNum].opciones[3];
+        if (preguntasBiblicas.length === 0) {
+            gameOver();
+            return;
+        }
+    
+        randomNum = Math.floor(Math.random() * preguntasBiblicas.length);
+        const preguntaSeleccionada = preguntasBiblicas[randomNum];
+    
+        ask.textContent = preguntaSeleccionada.pregunta;
+        option__a.textContent = preguntaSeleccionada.opciones[0];
+        option__b.textContent = preguntaSeleccionada.opciones[1];
+        option__c.textContent = preguntaSeleccionada.opciones[2];
+        option__d.textContent = preguntaSeleccionada.opciones[3];
+    
 
+        preguntasBiblicas.splice(randomNum, 1);
     }
 
     function checkAnswer(optionSelected) {
