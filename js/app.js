@@ -107,42 +107,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
-    function randomAsk() {
-        if (preguntasBiblicas.length === 0) {
-            gameOver();
-            return;
-        }
-    
-        randomNum = Math.floor(Math.random() * preguntasBiblicas.length);
-        const preguntaSeleccionada = preguntasBiblicas[randomNum];
-    
-        ask.textContent = preguntaSeleccionada.pregunta;
-        option__a.textContent = preguntaSeleccionada.opciones[0];
-        option__b.textContent = preguntaSeleccionada.opciones[1];
-        option__c.textContent = preguntaSeleccionada.opciones[2];
-        option__d.textContent = preguntaSeleccionada.opciones[3];
-    
+    let preguntaActual; // Variable global para la pregunta actual
 
-        preguntasBiblicas.splice(randomNum, 1);
+function randomAsk() {
+    if (preguntasBiblicas.length === 0) {
+        gameOver();
+        return;
     }
 
-    function checkAnswer(optionSelected) {
-        const correct = preguntasBiblicas[randomNum].respuestaCorrecta
-        document.querySelector('.options__container').classList.add('disabled');
-        if (optionSelected === correct) {
-            incorrectp.textContent = ''
-            correctp.textContent = 'Correcto'
-            score += 10
-            scorep.textContent = score
-            reference.textContent = preguntasBiblicas[randomNum].referenciaBiblica
-            clearInterval(interval)
-        } else {
-            correctp.textContent = ''
-            incorrectp.textContent = 'Incorrecto'
-            lifescount()
-            clearInterval(interval)
-        }
+    randomNum = Math.floor(Math.random() * preguntasBiblicas.length);
+    preguntaActual = preguntasBiblicas[randomNum]; // Guarda la pregunta seleccionada
+
+    ask.textContent = preguntaActual.pregunta;
+    option__a.textContent = preguntaActual.opciones[0];
+    option__b.textContent = preguntaActual.opciones[1];
+    option__c.textContent = preguntaActual.opciones[2];
+    option__d.textContent = preguntaActual.opciones[3];
+
+    preguntasBiblicas.splice(randomNum, 1); // Elimina la pregunta de la lista
+}
+
+function checkAnswer(optionSelected) {
+    document.querySelector('.options__container').classList.add('disabled');
+    if (optionSelected === preguntaActual.respuestaCorrecta) { // Compara con la pregunta actual
+        incorrectp.textContent = '';
+        correctp.textContent = 'Correcto';
+        score += 10;
+        scorep.textContent = score;
+        reference.textContent = `Referencia: ${preguntaActual.referenciaBiblica}`; // Muestra la referencia
+        clearInterval(interval);
+    } else {
+        correctp.textContent = '';
+        incorrectp.textContent = 'Incorrecto';
+        lifescount();
+        clearInterval(interval);
     }
+}
+
     function lifescount() {
         if (lifes === 5) {
             life5.style.animation = 'none'
